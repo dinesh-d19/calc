@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body{
+    background-image: url(https://images.wallpapersden.com/image/download/astronaut-lost-in-space_bGtua2eUmZqaraWkpJRobWllrWdma2U.jpg);
+    background-size: cover;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e3eb;
+  }
+
+.main{
+    position: relative;
+    right: 60px;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 20px 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px;
+ }
+
+ .display{
+    height: 80px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    text-align: right;
+    color: #000e1a;
+    font-size: 30px;
+
+ }
+
+ .btn{
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns: repeat(4,1fr);
+ }
+
+ .btn input{
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color:#eee ;
+ }
+ .btn input:hover{
+    background-color: brown;
+
+ }
+
+ .btn input:active{
+    transform: scale(1.05);
+
+ }
+
+ .operator{
+    color: #2f9fff;
+ }
+
+
+ .h{
+  margin-top: -600px;
+  position:relative;
+  left: 150px;
+ }
+
+footer{
+  position: absolute;
+  float: left;
+  margin-top: 700px;
+  color: #fff;
+}
+
+</style>
+</head>
+
+<body>
+    <h1 class="h">calculator</h1>
+
+    <div class="main">
+
+        <input type="text" class="display" id = 'res'>
+        <div class="btn">
+           <input class="operator"  type="button" value = 'C' onclick = "res.value = ''">
+           <input class="operator" type="button" value = '%' onclick = "res.value += '%'">
+           <input class="operator" type="button" value = '←' onclick ="res.value = res.value.toString().slice(0,-1)">
+           <input class="operator" type="button" value = '/' onclick = "res.value += '/'">
+
+           <input type="button" value = '7' onclick = "res.value += '7'">
+           <input type="button" value = '8' onclick = "res.value += '8'">
+           <input type="button" value = '9' onclick = "res.value += '9'">
+           <input class="operator" type="button" value = 'x' onclick = "res.value += '*'">
+
+           <input type="button" value = '4' onclick = "res.value += '4'">
+           <input type="button" value = '5' onclick = "res.value += '5'">
+           <input type="button" value = '6' onclick = "res.value += '6'">
+           <input class="operator" type="button" value = '-' onclick = "res.value += '-'">
+
+           <input type="button" value = '1' onclick = "res.value += '1'">
+           <input type="button" value = '2' onclick = "res.value += '2'">
+           <input type="button" value = '3' onclick = "res.value += '3'">
+           <input class="operator" type="button" value = '+' onclick = "res.value += '+'">
+
+           <input type="button" value = '00'onclick = "res.value += '00'">
+           <input type="button" value = '0' onclick = "res.value += '0'">
+           <input type="button" value = '.' onclick = "res.value += '.'">
+           <input class="operator" type="button" value = '=' onclick = "res.value = eval(res.value)">
+        </div>
+     </div>
+     <footer>
+         <p>&copy; Dinesh. All rights reserved.</p>
+       </footer>
+       </center>
+</body>
+</html>
